@@ -12,6 +12,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="carrinho.js"></script>
+    <link rel="stylesheet" href="/css/carrinho.css">
+    
 </head>
 
 <body style="background-image: url(fundo-roxo.jpg); background-size: cover;">
@@ -34,16 +36,15 @@
             </div>
         </div>
     </nav>
-    <div class="container mt-4" style="background-color:  rgb(37, 6, 37);">
-        <h1>🛒 Meu Carrinho</h1>
+    <div id="carrinho" class="cart-list"></div>
 
-        <div id="carrinho"></div>
+    <div class="cart-footer">
+        <h2>Total: R$ <span id="total">0,00</span></h2>
 
-            <h3>Total: R$ <span id="total">0,00</span></h3>
-
-        <div class="d-flex gap-2 mt-3">
-            <button class="btn" onclick="finalizarCompra()">Finalizar</button>
-            <button class="btn" onclick="limparCarrinho()">Limpar</button>
+        <div class="actions">
+            <button class="btn finalizar" onclick="finalizarCompra()">Finalizar</button>
+            <button class="btn limpar" onclick="limparCarrinho()">Limpar</button>
+            <a class="btn btn-secondary" style="margin-top: 10px;" href="loja">Adicionar mais produtos</a>
         </div>
     </div>
     <script src="carrinho.js"></script>

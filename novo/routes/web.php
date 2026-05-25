@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TesteController;
+use App\Http\Controllers\ProdutoController;
 
 Route::get('/inicio',[TesteController::class,'inicio']);
 Route::get('/loja',[TesteController::class,'loja']);
@@ -19,4 +20,7 @@ Route::get('/bolo',[TesteController::class,'bolo']);
 Route::get('/bolo2',[TesteController::class,'bolo2']);
 Route::get('/carrinho',[TesteController::class,'carrinho']);
 Route::get('/cadastro',[TesteController::class,'cadastro']);
-Route::get('/login',[TesteController::class,'login]);
+Route::get('/login',[TesteController::class,'login']);
+
+Route::get('/cadastro_produto',[ProdutoController::class,'cadastro_produto'])->name('cadastro_produto');
+Route::get('/listar_produtos',[ProdutoController::class,'listar_produtos'])->name('listar_produtos');

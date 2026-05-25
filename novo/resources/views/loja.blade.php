@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/css/produtos.css">
 </head>
 
-<body style="background-image:url(pink.webp); background-size: cover;">
+<body style="background-color: rgb(74, 0, 75);">
 
     <nav class="navbar navbar-expand-lg" style="background-color: rgb(37, 6, 37);">
         <div class="container-fluid">

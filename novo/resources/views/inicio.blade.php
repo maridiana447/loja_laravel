@@ -66,7 +66,12 @@
                 <h5 class="card-title">Bruxolito Q'Pinta</h5>
 
                 <a href="pirulito" class="btn btn-dark">Comprar</a>
+                
             </div>
+            <button class="btn btn-lg w-100 text-white mt-2" style="background-color: rgb(37, 6, 37);"
+                    onclick="adicionarAoCarrinho('Bruxolito Q Pinta', 18.99)">
+                    Adicionar ao Carrinho!
+            </button>
         </div>
         <div class="card" id="bala" style="width: 18rem; background-color: rgb(37, 6, 37); color: white;">
             <img src="bala.webp" class="card-img-top" alt="...">
@@ -75,6 +80,10 @@
 
                 <a href="bala" class="btn btn-dark">Comprar</a>
             </div>
+            <button class="btn btn-lg w-100 text-white mt-2" style="background-color: rgb(37, 6, 37);"
+                onclick="adicionarAoCarrinho('Bala Fini de Aranha', 9.99)">
+                Adicionar ao Carrinho!
+            </button>
         </div>
         <div class="card" id="chocolate" style="width: 18rem; background-color: rgb(37, 6, 37); color: white;">
             <img src="chocolate.webp" class="card-img-top" alt="...">
@@ -82,6 +91,10 @@
                 <h5 class="card-title">Moedas sabor Chocolate</h5>
                 <a href="chocolate" class="btn btn-dark">Comprar</a>
             </div>
+            <button class="btn btn-lg w-100 text-white mt-2" style="background-color: rgb(37, 6, 37);"
+                onclick="adicionarAoCarrinho('Moedas Sabor Chocolate', 25.99)">
+                Adicionar ao Carrinho!
+            </button>
         </div>
     </div>
     <h1 class="text-center" style="margin-top: 30px;">Lançamentos horripilantes!</h1>
@@ -93,6 +106,10 @@
 
                 <a href="bolo" class="btn btn-dark">Comprar</a>
             </div>
+            <button class="btn btn-lg w-100 text-white mt-2" style="background-color: rgb(37, 6, 37);"
+                onclick="adicionarAoCarrinho('Bolo Abóbora', 59.99)">
+                Adicionar ao Carrinho!
+            </button>
         </div>
         <div class="card" id="bala" style="width: 18rem; background-color: rgb(37, 6, 37); color: white;">
             <img src="chocolate2.png" class="card-img-top" alt="...">
@@ -101,6 +118,10 @@
 
                 <a href="chocolate2" class="btn btn-dark">Comprar</a>
             </div>
+            <button class="btn btn-lg w-100 text-white mt-2" style="background-color: rgb(37, 6, 37);"
+                onclick="adicionarAoCarrinho('Chocolate Caixão', 25.99)">
+                Adicionar ao Carrinho!
+            </button>
         </div>
         <div class="card" id="chocolate" style="width: 18rem; background-color: rgb(37, 6, 37); color: white;">
             <img src="bebidas2.webp" class="card-img-top" alt="...">
@@ -108,12 +129,38 @@
                 <h5 class="card-title">Driks</h5>
                 <a href="bebidas" class="btn btn-dark">Comprar</a>
             </div>
+            <button class="btn btn-lg w-100 text-white mt-2" style="background-color: rgb(37, 6, 37);"
+                onclick="adicionarAoCarrinho('Drinks', 29.90)">
+                Adicionar ao Carrinho!
+            </button>
         </div>
     </div>
     <div class="d-flex gap-3 flex-wrap justify-content-center" style="margin-top: 20px;">
         <a class="btn btn-dark" href="produtos">Veja todos os produtos</a>
     </div>
-    
+    <script>
+        function adicionarAoCarrinho(nome, preco) {
+            var produtos = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+            var encontrado = false;
+
+            for (var i = 0; i < produtos.length; i++) {
+                if (produtos[i].nome === nome) {
+                    produtos[i].quantidade += 1;
+                    encontrado = true;
+                    break;
+                }
+            }
+
+            if (!encontrado) {
+                produtos.push({ nome: nome, preco: preco, quantidade: 1 });
+            }
+
+            localStorage.setItem('carrinho', JSON.stringify(produtos));
+
+            window.location.href = "carrinho";
+        }
+    </script>
 </body>
 <footer class="bg-body-tertiary text-white mt-5 pt-4">
     <div class="container">

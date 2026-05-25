@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="paodemel.js"></script>
+    <script src="avaliação.js"></script>
+</head>
+
+<body style="background-image:url(pink.jpg); background-size: cover;">
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(37, 6, 37);">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <img width="105px" height="60px" src="Spooky-removebg-preview.png" alt="">
+                    <a class="nav-link active" aria-current="page" href="inicio">Página Inicial</a>
+                    <a class="nav-link" href="loja">Produtos</a>
+                    <a class="nav-link" href="login">Login</a>
+                    <a class="nav-link" href="cadastro">Cadastro</a>
+                    <a class="nav-link" href="carrinho">Carrinho</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4" style="background-color:  rgb(37, 6, 37);">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="paodemel.png" class="img-fluid rounded shadow-sm" style="margin-top: 50px;" alt="Sua Imagem">
+            </div>
+            <div class="col-md-8">
+                <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3 rounded border">
+                    <a class="navbar-brand" href="#">Local de compra</a>
+                    <ul class="nav nav-pills ms-auto">
+                        <li class="nav-item">
+                            <button class="nav-link" style="background-color: rgb(37, 6, 37);"
+                                onclick="iniciarAvaliação()">Avaliações</button>
+                        </li>
+                    </ul>
+                </nav>
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+                    data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2 border"
+                    tabindex="0" style="height: 400px; overflow-y: auto; position: relative;">
+                    <h4 id="scrollspyHeading1"></h4>
+                    <p>O nosso Pão de Mel tem fama pela sua variedade de escolha e por ter popularidade entre a
+                        criançada. <br>
+                        Você pode comprá-lo agora mesmo, pelo valor de :</p>
+                    <h1>R$ 4,99 und.</h1>
+                    <button class="btn btn-lg w-100 text-white" style="background-color: rgb(37, 6, 37);"
+                        onclick="iniciarCompra()">
+                        Clique aqui para comprar!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

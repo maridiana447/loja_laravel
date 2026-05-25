@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <a href="{{ route('inicial')}}"></a>
-</body>
-</html>
+@extends('layouts.principal')
+
+@section('title','teste')
+
+@section('content')
+    <h2>Olá Marquinhos Onfire!</h2>
+    <a href="{{  route('inicio') }}">Voltar para página inicial</a>
+@endsection
