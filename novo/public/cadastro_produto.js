@@ -1,31 +1,33 @@
 $(document).ready(function () {
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-
+    
     $("#btn_cadastrar").click(function () {
         $.ajax({
             type: "POST",
-            url: "/api/salvar_produto",
+            url: "api/salvar_usuario",
             data: {
-                nome_produto:      $("#nome_produto").val(),
-                telefone_produto:  $("#telefone_produto").val(),
-                email_produto:     $("#email_produto").val(),
-                data_nascimento:   $("#data_nascimento").val(),
+                nome_usuario:      $("#nome_usuario").val(),
+                telefone_usuario:  $("#telefone_usuario").val(),
+                email_usuario:     $("#email_usuario").val(),
+                data_usuario:   $("#data_usuario").val(),
+                senha_usuario:     $("#senha_usuario").val(),
             },
             dataType: "JSON",
             success: function (data) {
+
+                console.log(data);
                 if (data.erro == 'n') {
-                    Swal.fire({ title: "Ótimo!", text: data.msg, icon: "success" });
+                    Swal.fire({ 
+                    title: "Ótimo!", 
+                    text: "Usuario cadastrado!", 
+                    icon: "success" });
+
                 } else {
-                    Swal.fire({ title: "Erro!", text: data.msg, icon: "error" });
+                    Swal.fire({ 
+                    title: "Vish!", 
+                    text: "Deu erro!", 
+                    icon: "error" });
                 }
             },
-            error: function (xhr) {
-                Swal.fire({ title: "Erro!", text: "Status " + xhr.status + " - veja o console.", icon: "error" });
-            }
         });
     });
 });

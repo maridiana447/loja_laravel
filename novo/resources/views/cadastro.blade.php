@@ -1,5 +1,6 @@
 @extends('layouts.navbar')
 @section('content')
+<script src="cadastro_produto.js"></script>
     <div class="container-fluid vh-100">
         <div class="row h-100">
             <div class="col-md-8 d-flex justify-content-center align-items-center">
@@ -15,26 +16,40 @@
                             <a href="login" class="btn btn-dark w-50">Login</a>
                             <button class="btn w-50" style="background:#55009b;">Cadastrar</button>
                         </div>
+                        <div class="mb-3 text-start">
+                            <label>Nome</label>
+                            <input type="email" id="nome_usuario" class="form-control bg-dark text-white border-0"
+                                placeholder="Escreva seu nome completo">
+                        </div>
 
                         <div class="mb-3 text-start">
-                            <label>E-mail</label>
-                            <input type="email" class="form-control bg-dark text-white border-0"
+                            <label>Email</label>
+                            <input type="email" id="email_usuario" class="form-control bg-dark text-white border-0"
                                 placeholder="voce@gmail.com">
                         </div>
 
                         <div class="mb-2 text-start">
                             <label>Senha</label>
-                            <input type="password" class="form-control bg-dark text-white border-0"
+                            <input type="password" id="senha_usuario" class="form-control bg-dark text-white border-0"
                                 placeholder="Escolha uma senha forte">
                         </div>
 
                         <div class="mb-2 text-start">
-                            <label>Confirmar senha</label>
-                            <input type="password" class="form-control bg-dark text-white border-0"
-                                placeholder="Confirme sua senha">
+                            <label>Telefone</label>
+                            <input type="" id="telefone_usuario" class="form-control bg-dark text-white border-0"
+                                placeholder="Digite seu número">
                         </div>
-
-                        <a href="inicio" class="btn w-100" style="background-color:#55009b;">Acessar</a>
+                        <div class="mb-2 text-start">
+                            <label>Data de Nascimento</label>
+                            <input type="date" id="data_usuario" class="form-control bg-dark text-white border-0">
+                        </div>
+                        <div class="d-flex justify-content-center mt-3">
+                            <a class="btn text-white w-100"
+                            style="background-color:#55009b;"
+                            id="btn_cadastrar">
+                            Acessar
+                            </a>
+                        </div>
 
                     </div>
 

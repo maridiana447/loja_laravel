@@ -35,7 +35,7 @@
             <input type="date" class="form-control form-control-sm"  id="data_validade" name="data_validade" >
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12 mt-2">
-            <button class="btn btn-success btn-sm" id="btn_cadastrar">Cadastrar produto</button>
+            <button class="btn btn-success btn-sm" >Cadastrar produto</button>
         </div>
     </div>
 

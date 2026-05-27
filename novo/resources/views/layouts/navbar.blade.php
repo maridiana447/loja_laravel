@@ -18,11 +18,10 @@
     <link rel="stylesheet" href="/css/carrinho.css">
     <link rel="stylesheet" href="/css/inicio.css">
     <script src="sweetalert.js"></script>
-    <script src="barra.js"></script>
     <link rel="stylesheet" href="/css/produtos.css">
-    <script src="paodemel.js"></script>
+   
 </head>
-<body style="background-image:url(pink.jpg); background-size: cover;>
+<body style="background-image:url(fundo-roxo.jpg); background-size: cover;">
     <nav class="navbar navbar-expand-lg" style="background-color: rgb(37, 6, 37);">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"

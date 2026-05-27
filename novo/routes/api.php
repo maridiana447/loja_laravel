@@ -2,10 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\UsuarioController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('/salvar_produto',[ProdutoController::class,'salvar_produto'])->name('salvar_produto');
+Route::post('/salvar_usuario',[UsuarioController::class,'salvar_usuario'])->name('salvar_usuario');
