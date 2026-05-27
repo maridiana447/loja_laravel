@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-BR" data-bs-theme="dark">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filler Filter</title>
-
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="/css/login.css">
-
-</head>
-
-<body>
+@extends('layouts.navbar')
+@section('content')
     <div class="container-fluid vh-100">
         <div class="row h-100">
             <div class="col-md-8 d-flex justify-content-center align-items-center">
@@ -64,6 +48,4 @@
     </div>
     </div>
 
-</body>
-
-</html>
+@endsection
