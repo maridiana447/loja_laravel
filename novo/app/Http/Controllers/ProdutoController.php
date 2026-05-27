@@ -7,59 +7,43 @@ use App\Models\Produto;
 
 class ProdutoController extends Controller
 {
-    public function cadastro_produto(Request $request){
+    public function cadastro_produto(Request $request)
+    {
         return view('cadastro_produto');
     }
-    public function salvar_produto(Request $request){
+
+    public function salvar_produto(Request $request)
+    {
         $request->validate([
-            '?N' => 'required',
-            'descricao_produto' => 'nullable',
-            'preco_produto' => 'required',
-            'estoque_produto' => 'nullable',
-            'data_validade' => 'nullable',
-            'tipo_produto' => 'nullable',
+            'nome_produto'  => 'required',
+            'telefone_produto' => 'required',
+            'email_produto' => 'required|email',
         ]);
-        
+
         try {
             $produto = new Produto;
             $produto->nome = $request->nome_produto;
-            $produto->descricao = $request->descricao_produto;
-            $produto->preco = $request->preco_produto;
-            $produto->estoque = $request->estoque_produto;
-            $produto->data_validade = $request->data_validade;
-            $produto->tipo = $request->tipo_produto;
+            $produto->telefone = $request->telefone_produto;
+            $produto->email = $request->email_produto;
+            $produto->data_nascimento = $request->data_nascimento;
             $produto->save();
 
-            $data = [];
-
-            $data = [
+            return response()->json([
                 'erro' => 'n',
-                'msg' => 'Produto cadastrado com sucesso',
+                'msg'  => 'Cadastrado com sucesso!',
+            ], 200);
 
-            ];
-            return response()->json($data, 200);
         } catch (\Throwable $th) {
-          
-
-            $data = [
-                'error' => 's',
-                'msg' => 'Erro ao cadastrar o produto',
-
-            ];
-            return response()->json($data, 200);
+            return response()->json([
+                'erro' => 's',
+                'msg'  => 'Erro ' . $th->getMessage(),
+            ], 500);
         }
-
-
-
-
-
-
-
-
     }
-        
-    public function listar_produtos(Request $request){
+
+    public function listar_produtos(Request $request)
+    {
         $produtos = Produto::all();
-        return view ('lista_produto')->with('produtos',$produtos);
+        return view('lista_produto')->with('produtos', $produtos);
     }
 }
