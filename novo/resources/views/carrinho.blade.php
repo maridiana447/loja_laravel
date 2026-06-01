@@ -1,5 +1,7 @@
 @extends('layouts.navbar')
 @section('content')
+<link rel="stylesheet" href="/css/carrinho.css">
+<script src="carrinho.js"></script>
     <div id="carrinho" class="cart-list"></div>
 
     <div class="cart-footer">

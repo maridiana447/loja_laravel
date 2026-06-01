@@ -12,14 +12,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="login.js"></script>
-    <script src="avaliação.js"></script>
     <link rel="stylesheet" href="/css/login.css">
-    <script src="carrinho.js"></script>
     <link rel="stylesheet" href="/css/carrinho.css">
     <link rel="stylesheet" href="/css/inicio.css">
-    <script src="sweetalert.js"></script>
     <link rel="stylesheet" href="/css/produtos.css">
-   
 </head>
 <body style="background-image:url(fundo-roxo.jpg); background-size: cover;">
     <nav class="navbar navbar-expand-lg" style="background-color: #3c026b;">
@@ -37,6 +33,7 @@
                     <a class="nav-link" href="cadastro">Cadastro</a>
                     <a class="nav-link" href="carrinho">Carrinho</a>
                     <a class="nav-link" href="encomenda">Encomenda personalizada</a>
+                    <a class="nav-link" href="lista_produto">Lista de encomendas</a>
                 </div>
             </div>
         </div>

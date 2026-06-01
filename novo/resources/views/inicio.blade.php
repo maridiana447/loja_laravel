@@ -1,5 +1,7 @@
 @extends('layouts.navbar')
 @section('content')
+<script src="bemvindo.js"></script>
+<link rel="stylesheet" href="/css/inicio.css">
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">

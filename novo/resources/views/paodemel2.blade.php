@@ -1,5 +1,7 @@
 @extends('layouts.navbar')
 @section('content')
+<script src="paodemel.js"></script>
+<script src="avaliação.js"></script>
     <div class="container mt-4" style="background-color:  rgb(37, 6, 37);">
         <div class="row">
             <div class="col-md-4">

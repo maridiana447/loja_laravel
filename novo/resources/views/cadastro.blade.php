@@ -44,11 +44,7 @@
                             <input type="date" id="data_usuario" class="form-control bg-dark text-white border-0">
                         </div>
                         <div class="d-flex justify-content-center mt-3">
-                            <a class="btn text-white w-100"
-                            style="background-color:#55009b;"
-                            id="btn_cadastrar">
-                            Acessar
-                            </a>
+                            <a class="btn text-white w-100" style="background-color:#55009b;" id="btn_cadastrar" href="inicio"> Acessar </a>
                         </div>
 
                     </div>

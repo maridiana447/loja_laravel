@@ -1,39 +1,40 @@
-@extends('layouts.principal')
+@extends('layouts.navbar')
 
 @section('title', 'Lista de produtos')
 
 @section('content')
-<div class="container">
-    <h1 class="text-center">Lista de produtos</h1>
+  <div class="container vh-100 text-center">
+    <h2 style="color:white;" class="mt-4">Encomendas realizadas!</h2>
+    <p style="color:white;">Detalhe dos pedidos personalizados:</p>
+    <table class="table table-hover table-bordered align-middle shadow-sm bg-white rounded mt-5 w-auto mx-auto">
+      <thead class="table-dark">
+        <tr>
+          <th>Pedido</th>
+          <th>Nome</th>
+          <th>Recheio</th>
+          <th>Cobertura</th>
+          <th>Descrição</th>
+          <th>Data</th>
+          <th>Telefone</th>
+          <th>Endereço</th>
+        </tr>
+      </thead>
 
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Descrição</th>
-      <th scope="col">Preço</th>
-      <th scope="col">Qtd. em Estoque</th>
-      <th scope="col">Data de validade</th>
-      <th scope="col">Tipo</th>
-    </tr>
-  </thead>
-  <tbody>
-    @foreach ($produtos as $p)
-    <tr>
-      <th scope="row">{{$p->id }}</th>
-      <td>{{$p->nome }}</td>
-      <td>{( $p->descricao )}</td>
-      <td>{( $p->preco )}</td>
-      <td>{( $p->estoque )}</td>
-      <td>{( $p->data_validade )}</td>
-      <td>{( $p->tipo )}</td>
-    </tr>
-    @endforeach
-  </tbody>
-</table>
-
-</div>
+      <tbody>
+        @foreach ($Bolo as $b)
+        <tr>
+          <td>{{ $b->id }}</td>
+          <td>{{ $b->nome }}</td>
+          <td>{{ $b->recheio }}</td>
+          <td>{{ $b->cobertura }}</td>
+          <td>{{ $b->descricao }}</td>
+          <td>{{ $b->data_entrega }}</td>
+          <td>{{ $b->telefone }}</td>
+          <td>{{ $b->endereco }}</td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>     
+  </div>
 
 @endsection

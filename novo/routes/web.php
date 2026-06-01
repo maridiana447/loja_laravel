@@ -25,6 +25,7 @@ Route::get('/carrinho',[TesteController::class,'carrinho']);
 Route::get('/cadastro',[TesteController::class,'cadastro']);
 Route::get('/login',[TesteController::class,'login']);
 Route::get('/encomenda',[TesteController::class,'encomenda']);
+Route::get('/lista_produto',[BoloController::class,'lista_produto']);
 
 Route::get('/cadastro',[UsuarioController::class,'cadastro'])->name('cadastro');
 

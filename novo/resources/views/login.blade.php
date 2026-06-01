@@ -1,5 +1,7 @@
 @extends('layouts.navbar')
 @section('content')
+<link rel="stylesheet" href="/css/login.css">
+<script src="login.js"></script>
     <div class="container-fluid vh-100">
         <div class="row h-100">
             <div class="col-md-8 d-flex justify-content-center align-items-center">

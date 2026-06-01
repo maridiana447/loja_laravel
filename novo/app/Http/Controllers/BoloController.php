@@ -18,7 +18,7 @@ class BoloController extends Controller
             'nome_bolo'  => 'required',
             'recheio_bolo' => 'required',
             'cobertura_bolo' => 'required',
-            'descricao_bolo' => 'required',
+            'descricao_bolo' => 'nullable',
             'telefone_bolo' => 'required',
             'endereco_bolo' => 'required',
             'data_bolo' => 'required',
@@ -43,7 +43,7 @@ class BoloController extends Controller
 
              return response()->json($data, 200);
         } catch (\Throwable $th) {
-          
+        
 
             $data = [
                 'error' => 's',
@@ -51,8 +51,16 @@ class BoloController extends Controller
 
             ];
             return response()->json($data, 200);
-        };
+        }
 
+
+    }
+
+    public function lista_produto()
+    {
+    $Bolo = Bolo::all();
+
+    return view('lista_produto', compact('Bolo'));
     }
 
 }

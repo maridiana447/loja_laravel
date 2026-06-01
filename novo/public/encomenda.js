@@ -23,7 +23,8 @@ $(document).ready(function () {
                     text: "Bolo cadastrado!", 
                     icon: "success" });
 
-                } else {
+                }
+                else {
                     Swal.fire({ 
                     title: "Vish!", 
                     text: "Deu erro!", 
