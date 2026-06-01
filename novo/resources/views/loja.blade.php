@@ -1,5 +1,6 @@
 @extends('layouts.navbar')
 @section('content')
+<script src="barra.js"></script>
     <nav class="col-lg-3 mx-auto"
         style="background-color: rgb(37, 6, 37); border-radius: 8px; padding: 15px; margin-top: 15px;">
         <div class="text-white">

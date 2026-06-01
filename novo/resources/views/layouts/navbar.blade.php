@@ -22,7 +22,7 @@
    
 </head>
 <body style="background-image:url(fundo-roxo.jpg); background-size: cover;">
-    <nav class="navbar navbar-expand-lg" style="background-color: rgb(37, 6, 37);">
+    <nav class="navbar navbar-expand-lg" style="background-color: #3c026b;">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,6 +36,7 @@
                     <a class="nav-link" href="login">Login</a>
                     <a class="nav-link" href="cadastro">Cadastro</a>
                     <a class="nav-link" href="carrinho">Carrinho</a>
+                    <a class="nav-link" href="encomenda">Encomenda personalizada</a>
                 </div>
             </div>
         </div>
