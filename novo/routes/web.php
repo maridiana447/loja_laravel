@@ -27,3 +27,5 @@ Route::get('/encomenda',[TesteController::class,'encomenda']);
 Route::get('/cadastro_produto',[TesteController::class,'cadastro_produto']);
 
 Route::get('/cadastro',[UsuarioController::class,'cadastro'])->name('cadastro');
+Route::get('/encomenda',[BoloController::class,'encomenda'])->name('encomenda');
+
