@@ -60,7 +60,4 @@ class TesteController extends Controller
     public function encomenda(Request $request){
     return view('encomenda');
     }
-    public function cadastro_produto(Request $request){
-    return view('cadastro_produto');
-    }
 }

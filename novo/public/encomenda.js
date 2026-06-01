@@ -1,6 +1,6 @@
 $(document).ready(function () {
     
-    $("#btn_cadastrar").click(function () {
+    $("#btn_encomenda").click(function () {
         $.ajax({
             type: "POST",
             url: "api/salvar_bolo",

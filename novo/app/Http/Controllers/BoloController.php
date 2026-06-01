@@ -25,15 +25,15 @@ class BoloController extends Controller
         ]);
 
         try {
-            $cadastro = new Bolo;
-            $cadastro->nome = $request->nome_bolo;
-            $cadastro->recheio = $request->recheio_bolo;
-            $cadastro->cobertura = $request->cobertura_bolo;
-            $cadastro->descricao = $request->descricao_bolo;
-            $cadastro->telefone = $request->telefone_bolo;
-            $cadastro->endereco = $request->endereco_bolo;
-            $cadastro->data_entrega = $request->data_bolo;
-            $cadastro->save();
+            $encomenda = new Bolo;
+            $encomenda->nome = $request->nome_bolo;
+            $encomenda->recheio = $request->recheio_bolo;
+            $encomenda->cobertura = $request->cobertura_bolo;
+            $encomenda->descricao = $request->descricao_bolo;
+            $encomenda->telefone = $request->telefone_bolo;
+            $encomenda->endereco = $request->endereco_bolo;
+            $encomenda->data_entrega = $request->data_bolo;
+            $encomenda->save();
 
             $data = [];
             $data = [

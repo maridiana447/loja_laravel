@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TesteController;
-
+use App\Http\Controllers\BoloController;
 use App\Http\Controllers\UsuarioController;
 use App\Models\Usuario;
+use App\Models\Bolo;
 
 Route::get('/inicio',[TesteController::class,'inicio']);
 Route::get('/loja',[TesteController::class,'loja']);
@@ -24,8 +25,6 @@ Route::get('/carrinho',[TesteController::class,'carrinho']);
 Route::get('/cadastro',[TesteController::class,'cadastro']);
 Route::get('/login',[TesteController::class,'login']);
 Route::get('/encomenda',[TesteController::class,'encomenda']);
-Route::get('/cadastro_produto',[TesteController::class,'cadastro_produto']);
 
 Route::get('/cadastro',[UsuarioController::class,'cadastro'])->name('cadastro');
-Route::get('/encomenda',[BoloController::class,'encomenda'])->name('encomenda');
 
