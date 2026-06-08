@@ -29,3 +29,5 @@ Route::get('/lista_produto',[BoloController::class,'lista_produto']);
 
 Route::get('/cadastro',[UsuarioController::class,'cadastro'])->name('cadastro');
 
+Route::get('/visualizar_produto/{id}', [BoloController::class, 'visualizar_produto'])->name('visualizar_produto');
+

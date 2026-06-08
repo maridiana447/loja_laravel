@@ -13,7 +13,8 @@
         </div>
         <div class="col-lg-12 col-sm-12 col-md-10 mt-2">
             <label for ="descricao_produto">Descrição do Produto</label>
-            <textarea type="text" class="form-control form-control-sm" id="descricao_produto" name="descricao_produto" placeholder="Digite a descrição do produto"></textarea>
+            <textarea type="text" class="form-control form-control-sm" id="descricao_produto" value="{{$encomenda->descricao}}" name="descricao_produto" 
+            placeholder="Digite a descrição do produto"></textarea>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
             <label for ="preco_produto">Preço do Produto</label>
@@ -35,7 +36,7 @@
             <input type="date" class="form-control form-control-sm"  id="data_validade" name="data_validade" >
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12 mt-2">
-            <button class="btn btn-success btn-sm" >Cadastrar produto</button>
+            <button class="btn btn-warning btn-sm" id="btn_alterar" >Alterar produto</button>
         </div>
     </div>
 
