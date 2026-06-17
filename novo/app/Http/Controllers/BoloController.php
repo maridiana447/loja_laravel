@@ -115,4 +115,43 @@ class BoloController extends Controller
             return response()->json($data, 200);
         }
     }
+    public function excluir_produto(Request $request)
+    {
+        $request->validate([
+            'produto_id' => 'required|integer',
+        ]);
+
+        try {
+
+        $produto = Bolo::where('id', $request->produto_id)->first();
+        if($produto){
+            $produto->delete();
+
+            $data = [
+                'erro' => 'n',
+                'msg' => 'Produto excluído com sucesso'
+            ];
+            return response()->json($data, 200);
+        } else {
+            $data = [
+                'erro' => 's',
+                'msg' => 'Produto não encontrado'
+            ];
+            return response()->json($data, 200);
+        }
+
+        }catch(\Throwable $th){
+            throw $th;
+             $data = [
+                'erro' => 's',
+                'msg' => 'Produto não encontrado'
+            ];
+            return response()->json($data, 200);
+        }
+        try {
+            //code...
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
 }

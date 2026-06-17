@@ -12,3 +12,4 @@ Route::get('/user', function (Request $request) {
 Route::post('/salvar_usuario',[UsuarioController::class,'salvar_usuario'])->name('salvar_usuario');
 Route::post('/salvar_bolo',[BoloController::class,'salvar_bolo'])->name('salvar_bolo');
 Route::put('/alterar_produto',[BoloController::class,'alterar_produto'])->name('alterar_produto');
+Route::delete('/excluir_produto', [BoloController::class,'excluir_produto'])->name('excluir_produto');

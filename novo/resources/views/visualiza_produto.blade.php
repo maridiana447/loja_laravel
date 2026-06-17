@@ -52,7 +52,11 @@
 
         <div class="col-lg-3 col-md-3 col-sm-12 mt-3">
             <button class="btn btn-warning btn-sm" id="btn_alterar">Alterar produto</button>
+            <button class="btn btn-danger btn-sm ms-2" id="btn_excluir">Excluir Produto</button> 
         </div>
+
+
+
 
     </div>
 </div>
