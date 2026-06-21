@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TesteController;
+use App\Http\Controllers\BoloController;
+use App\Http\Controllers\UsuarioController;
+use App\Models\Usuario;
+use App\Models\Bolo;
+
+Route::get('/inicio',[TesteController::class,'inicio']);
+Route::get('/loja',[TesteController::class,'loja']);
+Route::get('/pirulito',[TesteController::class,'pirulito']);
+Route::get('/pirulito2',[TesteController::class,'pirulito2']);
+Route::get('/bala',[TesteController::class,'bala']);
+Route::get('/bala2',[TesteController::class,'bala2']);
+Route::get('/chocolate',[TesteController::class,'chocolate']);
+Route::get('/chocolate2',[TesteController::class,'chocolate2']);
+Route::get('/paodemel',[TesteController::class,'paodemel']);
+Route::get('/paodemel2',[TesteController::class,'paodemel2']);
+Route::get('/bebidas2',[TesteController::class,'bebidas2']);
+Route::get('/bebidas',[TesteController::class,'bebidas']);
+Route::get('/bolo',[TesteController::class,'bolo']);
+Route::get('/bolo2',[TesteController::class,'bolo2']);
+Route::get('/carrinho',[TesteController::class,'carrinho']);
+Route::get('/cadastro',[TesteController::class,'cadastro']);
+Route::get('/login',[TesteController::class,'login']);
+Route::get('/encomenda',[TesteController::class,'encomenda'])->name('encomenda');
+Route::get('/lista_produto',[BoloController::class,'lista_produto']);
+
+Route::get('/cadastro',[UsuarioController::class,'cadastro'])->name('cadastro');
+
+Route::get('/visualizar_produto/{id}', [BoloController::class, 'visualizar_produto'])->name('visualizar_produto');
+

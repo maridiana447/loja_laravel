@@ -1,0 +1,165 @@
+@extends('layouts.navbar')
+@section('content')
+<script src="bemvindo.js"></script>
+<link rel="stylesheet" href="/css/inicio.css">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img id="carrossel1" src="sweet spooky.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img id="carrossel2" src="sweet2.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img id="carrossel2" src="carrossel.png" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <h1 class="text-center" style="margin-top: 30px;">Nossos produtos mais vendidos</h1>
+    <div class="d-flex gap-3 flex-wrap justify-content-center" style="margin-top: 15px; text-align: center;">
+        <div class="card" id="pirulito" style="width: 18rem; background-color: rgb(37, 6, 37);color: white">
+            <img src="pirulito.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Bruxolito Q'Pinta</h5>
+
+                <a href="pirulito" class="btn btn-dark">Comprar</a>
+                
+            </div>
+            <button class="btn btn-lg w-100 text-white mt-2" style="background-color: rgb(37, 6, 37);"
+                    onclick="adicionarAoCarrinho('Bruxolito Q Pinta', 18.99)">
+                    Adicionar ao Carrinho!
+            </button>
+        </div>
+        <div class="card" id="bala" style="width: 18rem; background-color: rgb(37, 6, 37); color: white;">
+            <img src="bala.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Bala Fini Aranha</h5>
+
+                <a href="bala" class="btn btn-dark">Comprar</a>
+            </div>
+            <button class="btn btn-lg w-100 text-white mt-2" style="background-color: rgb(37, 6, 37);"
+                onclick="adicionarAoCarrinho('Bala Fini de Aranha', 9.99)">
+                Adicionar ao Carrinho!
+            </button>
+        </div>
+        <div class="card" id="chocolate" style="width: 18rem; background-color: rgb(37, 6, 37); color: white;">
+            <img src="chocolate.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Moedas sabor Chocolate</h5>
+                <a href="chocolate" class="btn btn-dark">Comprar</a>
+            </div>
+            <button class="btn btn-lg w-100 text-white mt-2" style="background-color: rgb(37, 6, 37);"
+                onclick="adicionarAoCarrinho('Moedas Sabor Chocolate', 25.99)">
+                Adicionar ao Carrinho!
+            </button>
+        </div>
+    </div>
+    <h1 class="text-center" style="margin-top: 30px;">Lançamentos horripilantes!</h1>
+    <div class="d-flex gap-3 flex-wrap justify-content-center" style="margin-top: 15px; text-align: center;">
+        <div class="card" id="pirulito" style="width: 18rem; background-color: rgb(37, 6, 37);color: white">
+            <img src="bolo.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Bolo abóbora</h5>
+
+                <a href="bolo" class="btn btn-dark">Comprar</a>
+            </div>
+            <button class="btn btn-lg w-100 text-white mt-2" style="background-color: rgb(37, 6, 37);"
+                onclick="adicionarAoCarrinho('Bolo Abóbora', 59.99)">
+                Adicionar ao Carrinho!
+            </button>
+        </div>
+        <div class="card" id="bala" style="width: 18rem; background-color: rgb(37, 6, 37); color: white;">
+            <img src="chocolate2.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Caixão de chocolate</h5>
+
+                <a href="chocolate2" class="btn btn-dark">Comprar</a>
+            </div>
+            <button class="btn btn-lg w-100 text-white mt-2" style="background-color: rgb(37, 6, 37);"
+                onclick="adicionarAoCarrinho('Chocolate Caixão', 25.99)">
+                Adicionar ao Carrinho!
+            </button>
+        </div>
+        <div class="card" id="chocolate" style="width: 18rem; background-color: rgb(37, 6, 37); color: white;">
+            <img src="bebidas2.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Driks</h5>
+                <a href="bebidas" class="btn btn-dark">Comprar</a>
+            </div>
+            <button class="btn btn-lg w-100 text-white mt-2" style="background-color: rgb(37, 6, 37);"
+                onclick="adicionarAoCarrinho('Drinks', 29.90)">
+                Adicionar ao Carrinho!
+            </button>
+        </div>
+    </div>
+    <div class="d-flex gap-3 flex-wrap justify-content-center" style="margin-top: 20px;">
+        <a class="btn btn-dark" href="produtos">Veja todos os produtos</a>
+    </div>
+    <script>
+        function adicionarAoCarrinho(nome, preco) {
+            var produtos = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+            var encontrado = false;
+
+            for (var i = 0; i < produtos.length; i++) {
+                if (produtos[i].nome === nome) {
+                    produtos[i].quantidade += 1;
+                    encontrado = true;
+                    break;
+                }
+            }
+
+            if (!encontrado) {
+                produtos.push({ nome: nome, preco: preco, quantidade: 1 });
+            }
+
+            localStorage.setItem('carrinho', JSON.stringify(produtos));
+
+            window.location.href = "carrinho";
+        }
+    </script>
+@endsection
+@section('footer')
+<footer class="bg-body-tertiary text-white mt-5 pt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h5>Sweet Spooky</h5>
+                <p>Somos apaixonados por criar experiências doces e assustadoras👻 <br>Entre doces e travessuras sempre
+                    prezamos pelos doces🍬</p>
+
+            </div>
+            <div class="col-md-3">
+                <h6>Sobre nós</h6>
+                <p>Rede criada em 2026 a partir do amor dos fundadores pela comemoração do halloween, com o sonho de que
+                    a tradição algum dia se tornasse mais presente e importante no Brasil. </p>
+            </div>
+            <div class="col-md-3">
+                <h6>Produtos</h6>
+                <p>Nossa loja procura ter produtos diversificados atendendo todos os nossos clientes, mas todos com
+                    temática de halloween para que a alegria do halloween possa ser celebrada durante o ano todo.</p>
+            </div>
+            <div class="col-md-3">
+                <h6>Atendimento</h6>
+                <p>📞 (15) 1234-5678</p>
+                <p>📞 (15) 9876-5432</p>
+                <p>✉️ contato@sweetspooky.com.br</p>
+            </div>
+
+        </div>
+        <div class="text-center mt-4">
+            <p class="mb-0">© 2026 Sweet Spook</p>
+        </div>
+    </div>
+</footer>
+@endsection
