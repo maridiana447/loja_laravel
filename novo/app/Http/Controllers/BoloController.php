@@ -1,0 +1,157 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Bolo;
+
+class BoloController extends Controller
+{
+    public function encomenda(Request $request)
+    {
+        return view('encomenda');
+    }
+
+    public function salvar_bolo(Request $request)
+    {
+        $request->validate([
+            'nome_bolo'  => 'required',
+            'recheio_bolo' => 'required',
+            'cobertura_bolo' => 'required',
+            'descricao_bolo' => 'nullable',
+            'telefone_bolo' => 'required',
+            'endereco_bolo' => 'required',
+            'data_bolo' => 'required',
+        ]);
+
+        try {
+            $encomenda = new Bolo;
+            $encomenda->nome = $request->nome_bolo;
+            $encomenda->recheio = $request->recheio_bolo;
+            $encomenda->cobertura = $request->cobertura_bolo;
+            $encomenda->descricao = $request->descricao_bolo;
+            $encomenda->telefone = $request->telefone_bolo;
+            $encomenda->endereco = $request->endereco_bolo;
+            $encomenda->data_entrega = $request->data_bolo;
+            $encomenda->save();
+
+            $data = [];
+            $data = [
+                'erro' => 'n',
+                'msg'  => 'Seu bolo personalizado foi enviado para preparação!',
+            ];
+
+             return response()->json($data, 200);
+        } catch (\Throwable $th) {
+        
+
+            $data = [
+                'error' => 's',
+                'msg' => 'Erro ao personalizar seu bolo!',
+
+            ];
+            return response()->json($data, 200);
+        }
+
+
+    }
+
+    public function lista_produto()
+    {
+    $Bolo = Bolo::all();
+
+    return view('lista_produto', compact('Bolo'));
+    }
+     
+    public function visualizar_produto($id)
+    {
+        $Bolo = Bolo::find($id);
+        return view('visualiza_produto')->with('Bolo', $Bolo);
+    }
+
+    public function alterar_produto(Request $request){
+        $request->validate([
+            'nome_bolo'  => 'required',
+            'recheio_bolo' => 'required',
+            'cobertura_bolo' => 'required',
+            'descricao_bolo' => 'nullable',
+            'telefone_bolo' => 'required',
+            'endereco_bolo' => 'required',
+            'data_bolo' => 'required',
+        ]);
+
+        try {
+            $encomenda = Bolo::where('id', $request->produto_id)->first();
+            if($encomenda) {
+                $encomenda->nome = $request->nome_bolo;
+                $encomenda->recheio = $request->recheio_bolo;
+                $encomenda->cobertura = $request->cobertura_bolo;
+                $encomenda->descricao = $request->descricao_bolo;
+                $encomenda->telefone = $request->telefone_bolo;
+                $encomenda->endereco = $request->endereco_bolo;
+                $encomenda->data_entrega = $request->data_bolo;
+                $encomenda->save();
+
+                $data = [];
+                $data = [
+                    'erro' => 'n',
+                    'msg'  => 'Seu bolo personalizado foi enviado para preparação!',
+                ];
+            } else {
+                $data = [
+                    'erro' => 'n',
+                    'msg'  => 'Seu bolo personalizado foi enviado para preparação!',
+                ];
+            }
+             return response()->json($data, 200);
+        } catch (\Throwable $th) {
+        
+
+            $data = [
+                'error' => 's',
+                'msg' => 'Erro ao personalizar seu bolo!',
+
+            ];
+            return response()->json($data, 200);
+        }
+    }
+    public function excluir_produto(Request $request)
+    {
+        $request->validate([
+            'produto_id' => 'required|integer',
+        ]);
+
+        try {
+
+        $produto = Bolo::where('id', $request->produto_id)->first();
+        if($produto){
+            $produto->delete();
+
+            $data = [
+                'erro' => 'n',
+                'msg' => 'Produto excluído com sucesso'
+            ];
+            return response()->json($data, 200);
+        } else {
+            $data = [
+                'erro' => 's',
+                'msg' => 'Produto não encontrado'
+            ];
+            return response()->json($data, 200);
+        }
+
+        }catch(\Throwable $th){
+            throw $th;
+             $data = [
+                'erro' => 's',
+                'msg' => 'Produto não encontrado'
+            ];
+            return response()->json($data, 200);
+        }
+        try {
+            //code...
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
+}
